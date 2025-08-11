@@ -23,4 +23,10 @@ public class JavaList {
             System.out.println(days.get(i));
         }
     }
+
+    public void printSize() {
+        List<String> days = dayListCreation();
+        System.out.println("El largo de la lista es de: " + days.size());
+    
+    }
 }

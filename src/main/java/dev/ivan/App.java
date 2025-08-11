@@ -8,7 +8,7 @@ public class App {
         
         JavaList javaList = new JavaList();
         javaList.printDays();
-
+        javaList.printSize();
       
     }   
 }
