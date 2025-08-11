@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         
         JavaList javaList = new JavaList();
-        List<String> days = javaList.dayListCreation();
+        javaList.printDays();
 
       
     }   
