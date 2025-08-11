@@ -1,7 +1,13 @@
 package dev.ivan;
 
+import java.util.List;
+
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+        JavaList javaList = new JavaList();
+        List<String> days = javaList.dayListCreation();
+
+      
+    }   
 }
