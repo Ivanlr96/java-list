@@ -5,8 +5,14 @@ import java.util.List;
 
 public class JavaList {
 
+    private List<String> days;
+
+    public JavaList() {
+        dayListCreation();
+    }
+
     public List<String> dayListCreation() {
-        List<String> days = new ArrayList<>();
+        days = new ArrayList<>();
         days.add("Lunes");
         days.add("Martes");
         days.add("Miércoles");
@@ -18,15 +24,17 @@ public class JavaList {
     }
 
     public void printDays() {
-        List<String> days = dayListCreation();
         for (int i = 0; i < days.size(); i++) {
             System.out.println(days.get(i));
         }
     }
 
     public void printSize() {
-        List<String> days = dayListCreation();
         System.out.println("El largo de la lista es de: " + days.size());
-    
+    }
+
+    public void deleteDay() {
+        days.remove(0);
+
     }
 }
