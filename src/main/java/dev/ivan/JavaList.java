@@ -47,4 +47,16 @@ public String getDayByName(String name) {
     return "Día no encontrado";
 }
 
+
+
+    public String dayExists(String name) {
+    for (int i = 0; i < days.size(); i++) {
+        if (days.get(i).equalsIgnoreCase(name)) {
+            return "El día existe en la lista";
+        }
+    }
+    return "El día no existe en la lista";
 }
+
+}
+
