@@ -17,5 +17,8 @@ public class App {
         javaList.sortDays();
         System.out.println("Lista ordenada:");
         javaList.printDays();
+        javaList.clearDayList();
+        javaList.printSize();
+        
     } 
 }

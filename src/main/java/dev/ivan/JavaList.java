@@ -64,5 +64,9 @@ public void sortDays() {
     Collections.sort(days, String.CASE_INSENSITIVE_ORDER);
 }
 
+public void clearDayList() {
+    days.clear();
+}
+
 }
 
