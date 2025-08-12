@@ -14,5 +14,8 @@ public class App {
         System.out.println("El día solicitado es: " + javaList.getDayByName("Martes"));
         System.out.println(javaList.dayExists("Lunes"));
         System.out.println(javaList.dayExists("Martes"));
+        javaList.sortDays();
+        System.out.println("Lista ordenada:");
+        javaList.printDays();
     } 
 }

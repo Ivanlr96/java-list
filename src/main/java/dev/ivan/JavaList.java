@@ -2,10 +2,12 @@ package dev.ivan;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class JavaList {
 
     private List<String> days;
+    
 
     public JavaList() {
         dayListCreation();
@@ -56,6 +58,10 @@ public String getDayByName(String name) {
         }
     }
     return "El día no existe en la lista";
+}
+
+public void sortDays() {
+    Collections.sort(days, String.CASE_INSENSITIVE_ORDER);
 }
 
 }
