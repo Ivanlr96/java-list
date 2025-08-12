@@ -11,6 +11,6 @@ public class App {
         javaList.printSize();
         javaList.deleteDay();
         javaList.printDays();
-      
+        System.out.println("El día solicitado es: " + javaList.getDayByName("Martes"));
     }   
 }

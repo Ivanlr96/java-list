@@ -37,4 +37,14 @@ public class JavaList {
         days.remove(0);
 
     }
+
+public String getDayByName(String name) {
+    for (int i = 0; i < days.size(); i++) {
+        if (days.get(i).equalsIgnoreCase(name)) {
+            return days.get(i);
+        }
+    }
+    return "Día no encontrado";
+}
+
 }
