@@ -7,64 +7,58 @@ import java.util.Collections;
 public class JavaList {
 
     private List<String> days;
-    
 
     public JavaList() {
         dayListCreation();
     }
 
-   public void dayListCreation() {
-    days = new ArrayList<>();
-    days.add("Lunes");
-    days.add("Martes");
-    days.add("Miércoles");
-    days.add("Jueves");
-    days.add("Viernes");
-    days.add("Sábado");
-    days.add("Domingo");
-}
-
-   public List<String> getDays() {
-    return days;
-}
-
-
-  public int printSize() {
-    return days.size();
-}
-
-    public void deleteDay() {
-        days.remove(0);
-
+    public void dayListCreation() {
+        days = new ArrayList<>();
+        days.add("Lunes");
+        days.add("Martes");
+        days.add("Miércoles");
+        days.add("Jueves");
+        days.add("Viernes");
+        days.add("Sábado");
+        days.add("Domingo");
     }
 
-public String getDayByName(String name) {
+    public List<String> getDays() {
+        return days;
+    }
+
+    public int printSize() {
+        return days.size();
+    }
+
+   public void deleteDay(String day) {
+    days.removeIf(d -> d.equalsIgnoreCase(day));
+}
+
+    public String getDayByName(String name) {
+        for (int i = 0; i < days.size(); i++) {
+            if (days.get(i).equalsIgnoreCase(name)) {
+                return days.get(i);
+            }
+        }
+        return "Día no encontrado";
+    }
+
+    public boolean dayExists(String name) {
     for (int i = 0; i < days.size(); i++) {
         if (days.get(i).equalsIgnoreCase(name)) {
-            return days.get(i);
+            return true;
         }
     }
-    return "Día no encontrado";
+    return false;
 }
 
-
-
-    public String dayExists(String name) {
-    for (int i = 0; i < days.size(); i++) {
-        if (days.get(i).equalsIgnoreCase(name)) {
-            return "El día existe en la lista";
-        }
+    public void sortDays() {
+        Collections.sort(days, String.CASE_INSENSITIVE_ORDER);
     }
-    return "El día no existe en la lista";
-}
 
-public void sortDays() {
-    Collections.sort(days, String.CASE_INSENSITIVE_ORDER);
-}
-
-public void clearDayList() {
-    days.clear();
-}
+    public void clearDayList() {
+        days.clear();
+    }
 
 }
-
