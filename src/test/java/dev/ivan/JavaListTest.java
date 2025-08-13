@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.arrayContaining;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -60,6 +61,28 @@ public void testCreateDayList() {
         int size = javaList.printSize();
 
         assertThat(size, is(equalTo(7)));
+    }
+
+     @Test
+    public void testDeleteDay() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
+
+
+        javaList.deleteDay("Lunes");
+
+        List<String> days = javaList.getDays();
+
+
+        assertThat(days, not(hasItem("Lunes")));
+
+
+        assertThat(days.size(), is(equalTo(6)));
+
+ 
+        assertThat(days, contains(
+                "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"
+        ));
     }
 }
 
