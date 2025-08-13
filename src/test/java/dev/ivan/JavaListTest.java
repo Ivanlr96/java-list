@@ -101,6 +101,25 @@ public void testCreateDayList() {
         String dayNotFound = javaList.getDayByName("Mortes");
         assertThat(dayNotFound, is(equalTo("Día no encontrado")));
     }
+
+    
+    @Test
+    public void testDayExists() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
+
+
+        boolean existsMonday = javaList.dayExists("Lunes");
+        assertThat(existsMonday, is(true));
+
+ 
+        boolean existsTuesday = javaList.dayExists("martes");
+        assertThat(existsTuesday, is(true));
+
+       
+        boolean existsHoliday = javaList.dayExists("Esmalte");
+        assertThat(existsHoliday, is(false));
+    }
 }
 
 
