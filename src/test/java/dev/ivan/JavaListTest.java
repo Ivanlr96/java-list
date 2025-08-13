@@ -98,7 +98,7 @@ public void testCreateDayList() {
         assertThat(dayFoundIgnoreCase, is(equalTo("Martes")));
 
 
-        String dayNotFound = javaList.getDayByName("Holiday");
+        String dayNotFound = javaList.getDayByName("Mortes");
         assertThat(dayNotFound, is(equalTo("Día no encontrado")));
     }
 }
