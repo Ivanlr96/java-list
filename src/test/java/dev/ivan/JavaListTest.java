@@ -10,6 +10,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+import java.util.Arrays;
 import java.util.List;
 
 import java.io.PrintStream;
@@ -119,6 +120,24 @@ public void testCreateDayList() {
        
         boolean existsHoliday = javaList.dayExists("Esmalte");
         assertThat(existsHoliday, is(false));
+    }
+
+      @Test
+    public void testSortDays() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
+
+        javaList.sortDays(); 
+
+        List<String> days = javaList.getDays();
+
+   
+        List<String> expected = Arrays.asList(
+                "Domingo", "Jueves", "Lunes", "Martes", "Miércoles", "Sábado", "Viernes"
+        );
+
+
+        assertThat(days, contains(expected.toArray()));
     }
 }
 
