@@ -28,15 +28,10 @@ public class JavaList {
     return days;
 }
 
-    public void printDays() {
-        for (int i = 0; i < days.size(); i++) {
-            System.out.println(days.get(i));
-        }
-    }
 
-    public void printSize() {
-        System.out.println("El largo de la lista es de: " + days.size());
-    }
+  public int printSize() {
+    return days.size();
+}
 
     public void deleteDay() {
         days.remove(0);
