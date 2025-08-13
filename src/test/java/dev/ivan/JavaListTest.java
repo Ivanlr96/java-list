@@ -84,7 +84,25 @@ public void testCreateDayList() {
                 "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"
         ));
     }
+
+      @Test
+    public void testGetDayByName() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation();
+
+        String dayFound = javaList.getDayByName("Lunes");
+        assertThat(dayFound, is(equalTo("Lunes")));
+
+
+        String dayFoundIgnoreCase = javaList.getDayByName("martes");
+        assertThat(dayFoundIgnoreCase, is(equalTo("Martes")));
+
+
+        String dayNotFound = javaList.getDayByName("Holiday");
+        assertThat(dayNotFound, is(equalTo("Día no encontrado")));
+    }
 }
+
 
 
 
