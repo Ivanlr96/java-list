@@ -13,17 +13,20 @@ public class JavaList {
         dayListCreation();
     }
 
-    public List<String> dayListCreation() {
-        days = new ArrayList<>();
-        days.add("Lunes");
-        days.add("Martes");
-        days.add("Miércoles");
-        days.add("Jueves");
-        days.add("Viernes");
-        days.add("Sábado");
-        days.add("Domingo");
-        return days;
-    }
+   public void dayListCreation() {
+    days = new ArrayList<>();
+    days.add("Lunes");
+    days.add("Martes");
+    days.add("Miércoles");
+    days.add("Jueves");
+    days.add("Viernes");
+    days.add("Sábado");
+    days.add("Domingo");
+}
+
+   public List<String> getDays() {
+    return days;
+}
 
     public void printDays() {
         for (int i = 0; i < days.size(); i++) {
