@@ -139,6 +139,19 @@ public void testCreateDayList() {
 
         assertThat(days, contains(expected.toArray()));
     }
+
+       @Test
+    public void testClearDayList() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
+
+    
+        javaList.clearDayList();
+
+    
+        assertThat(javaList.getDays(), is(empty()));
+        assertThat(javaList.getDays().size(), is(0)); 
+    }
 }
 
 
