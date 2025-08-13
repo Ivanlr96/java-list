@@ -3,8 +3,12 @@ package dev.ivan;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContaining;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+
 import java.util.List;
 
 import java.io.PrintStream;
@@ -29,5 +33,35 @@ public void testCreateDayList() {
     ));
 }
 
+    @Test
+    public void testGetDays() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
 
+        List<String> days = javaList.getDays();
+
+        assertThat(days, hasSize(7));
+
+
+        assertThat(days, contains(
+                "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"
+        ));
+
+    
+        assertThat(days, is(not(empty())));
+    }
+
+    
+    @Test
+    public void testPrintSize() {
+        JavaList javaList = new JavaList();
+        javaList.dayListCreation(); 
+
+        int size = javaList.printSize();
+
+        assertThat(size, is(equalTo(7)));
+    }
 }
+
+
+
